@@ -1,0 +1,16 @@
+{
+    "name": "jwellone.Samples.Scripts",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4ed3a4f9691144b9081d28042563f40f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
