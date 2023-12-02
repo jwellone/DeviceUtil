@@ -15,11 +15,22 @@ namespace jwellone.Samples
             var sb = new StringBuilder();
             var storage = DeviceUtil.storage;
 
-            sb.AppendLine("◼︎freeDiskSpace");
+            sb.AppendLine("■freeDiskSpace");
             sb.AppendLine(storage.freeDiskSpaceText);
             sb.AppendLine();
-            sb.AppendLine("◼︎totalDiskSpace");
+
+            sb.AppendLine("■totalDiskSpace");
             sb.AppendLine(storage.totalDiskSpaceText);
+            sb.AppendLine();
+
+            var profiler = DeviceUtil.profiler;
+            sb.AppendLine("■fps");
+            sb.AppendLine(profiler.fps.ToString("#.##"));
+            sb.AppendLine();
+
+            sb.AppendLine("■Memory");
+            sb.Append("Use : ").AppendLine(profiler.useMemorySizeText);
+            sb.AppendLine();
 
             _text.text = sb.ToString();
         }

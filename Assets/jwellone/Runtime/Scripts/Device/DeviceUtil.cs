@@ -4,7 +4,11 @@ namespace jwellone
 {
     public static class DeviceUtil
     {
-        public readonly static Storage storage = Storage.Create();
+        static IProfiler? _profiler;
+        static Storage? _storage;
+
+        public static Storage storage => _storage ??= Storage.Create();
+        public static IProfiler profiler => _profiler ??= Profiler.Create();
 
         public static void SetNoBackup(string path)
         {
