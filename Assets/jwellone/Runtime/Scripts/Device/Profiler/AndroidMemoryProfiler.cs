@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace jwellone
 {
-    public sealed class AndroidProfilerImpl : IMemoryProfiler
+    public sealed class AndroidMemoryProfiler : IMemoryProfiler
     {
         readonly AndroidJavaClass _unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 
-        ~AndroidProfilerImpl()
+        ~AndroidMemoryProfiler()
         {
             _unityPlayer.Dispose();
         }

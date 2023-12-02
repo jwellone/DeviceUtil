@@ -5,19 +5,18 @@ using UnityEngine;
 
 namespace jwellone
 {
-    internal sealed class AndroidStorageImpl : Storage
+    internal sealed class AndroidStorage : IStorage
     {
         readonly AndroidJavaObject _statFs = new AndroidJavaObject("android.os.StatFs", Application.temporaryCachePath);
 
-        ~AndroidStorageImpl()
+        ~AndroidStorage()
         {
             _statFs.Dispose();
         }
 
         long _blockSize => _statFs.Call<long>("getBlockSizeLong");
-
-        public override long freeDiskSpace => _statFs.Call<long>("getAvailableBlocksLong") * _blockSize;
-        public override long totalDiskSpace => _statFs.Call<long>("getBlockCountLong") * _blockSize;
+        long IStorage.freeDiskSpace => _statFs.Call<long>("getAvailableBlocksLong") * _blockSize;
+        long IStorage.totalDiskSpace => _statFs.Call<long>("getBlockCountLong") * _blockSize;
     }
 }
 #endif

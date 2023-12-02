@@ -2,7 +2,7 @@
 
 namespace jwellone
 {
-    public sealed class DefaultProfilerImpl : IMemoryProfiler
+    public sealed class DefaultMemoryProfiler : IMemoryProfiler
     {
         long IMemoryProfiler.useMemorySize
         {

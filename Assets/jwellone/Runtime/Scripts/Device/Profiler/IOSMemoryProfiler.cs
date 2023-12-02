@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace jwellone
 {
-    public sealed class IOSProfilerImpl : IMemoryProfiler
+    public sealed class IOSMemoryProfiler : IMemoryProfiler
     {
         [DllImport("__Internal")]
         static extern uint getUsedMemorySize();

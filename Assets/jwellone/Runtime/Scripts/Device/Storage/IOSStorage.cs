@@ -6,7 +6,7 @@ using UnityEngine.iOS;
 
 namespace jwellone
 {
-    internal sealed class IOSStorageImpl : Storage
+    internal sealed class IOSStorage : IStorage
     {
         [DllImport("__Internal")]
         static extern long getFreeDiskSpace();
@@ -14,11 +14,11 @@ namespace jwellone
         [DllImport("__Internal")]
         static extern long getTotalDiskSpace();
 
-        public override long freeDiskSpace => getFreeDiskSpace();
+        long IStorage.freeDiskSpace => getFreeDiskSpace();
 
-        public override long totalDiskSpace => getTotalDiskSpace();
+        long IStorage.totalDiskSpace => getTotalDiskSpace();
 
-        public override void SetNoBackupFlag(string path)
+        void IStorage.SetNoBackupFlag(string path)
         {
             Device.SetNoBackupFlag(path);
         }
