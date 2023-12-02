@@ -1,3 +1,5 @@
+using System.Collections;
+using System.IO;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,6 +32,7 @@ namespace jwellone.Samples
 
             sb.AppendLine("■Memory");
             sb.Append("Use : ").AppendLine(profiler.useMemorySizeText);
+            sb.Append("Total : ").AppendLine(profiler.totalMemorySizeText);
             sb.AppendLine();
 
             _text.text = sb.ToString();

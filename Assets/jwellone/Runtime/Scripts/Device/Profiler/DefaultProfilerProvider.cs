@@ -24,7 +24,9 @@ namespace jwellone
 
             float IProfilerProvider.fps => _fps;
             long IMemoryProfiler.useMemorySize => _memoryProfiler.useMemorySize;
+            long IMemoryProfiler.totalMemorySize => _memoryProfiler.totalMemorySize;
             string IProfilerProvider.useMemorySizeText => _formatter.GetString(_memoryProfiler.useMemorySize);
+            string IProfilerProvider.totalMemorySizeText => _formatter.GetString(_memoryProfiler.totalMemorySize);
 
             void Awake()
             {
@@ -51,7 +53,9 @@ namespace jwellone
         readonly IProfilerProvider _impl;
         float IProfilerProvider.fps => _impl.fps;
         long IMemoryProfiler.useMemorySize => _impl.useMemorySize;
+        long IMemoryProfiler.totalMemorySize => _impl.totalMemorySize;
         string IProfilerProvider.useMemorySizeText => _impl.useMemorySizeText;
+        string IProfilerProvider.totalMemorySizeText => _impl.totalMemorySizeText;
 
         DefaultProfilerProvider()
         {

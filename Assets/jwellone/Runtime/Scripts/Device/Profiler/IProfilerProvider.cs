@@ -6,5 +6,6 @@ namespace jwellone
     {
         float fps { get; }
         string useMemorySizeText { get; }
+        string totalMemorySizeText { get; }
     }
 }

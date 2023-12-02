@@ -10,7 +10,11 @@ namespace jwellone
         [DllImport("__Internal")]
         static extern uint getUsedMemorySize();
 
+        [DllImport("__Internal")]
+        static extern uint getTotalMemorySize();
+
         long IMemoryProfiler.useMemorySize => getUsedMemorySize();
+        long IMemoryProfiler.totalMemorySize => getTotalMemorySize();
     }
 }
 #endif

@@ -36,6 +36,14 @@ namespace jwellone
                 return totalKB * 1024;
             }
         }
+
+        long IMemoryProfiler.useMemorySize
+        {
+            get
+            {
+                return 0L;
+            }
+        }
     }
 }
 #endif

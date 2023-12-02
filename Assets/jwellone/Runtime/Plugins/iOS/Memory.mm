@@ -18,4 +18,9 @@ extern "C"
         
         return (int64_t)info.phys_footprint;
     }
+
+    int64_t getTotalMemorySize()
+    {
+        return [[NSProcessInfo processInfo] physicalMemory];
+    }
 }
