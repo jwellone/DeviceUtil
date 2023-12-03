@@ -8,8 +8,8 @@ namespace jwellone
     public sealed class AndroidMemoryProfiler : IMemoryProfiler
     {
         readonly int[] _ids = new int[1];
-        AndroidJavaObject? _activeManager;
-        AndroidJavaObject? _memoryInfo;
+        readonly AndroidJavaObject? _activeManager;
+        readonly AndroidJavaObject? _memoryInfo;
 
         internal AndroidMemoryProfiler()
         {
@@ -27,10 +27,7 @@ namespace jwellone
         ~AndroidMemoryProfiler()
         {
             _activeManager?.Dispose();
-            _activeManager = null;
-
             _memoryInfo?.Dispose();
-            _memoryInfo = null;
         }
 
         long IMemoryProfiler.useMemorySize
