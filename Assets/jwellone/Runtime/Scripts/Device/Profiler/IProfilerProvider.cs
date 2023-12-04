@@ -8,5 +8,10 @@ namespace jwellone
         string usedMemorySizeText { get; }
         string availableMemorySizeText { get; }
         string totalMemorySizeText { get; }
+        string unityTotalAllocatedMemorySizeText { get; }
+        string unityTotalUnusedReservedMemorySizeText { get; }
+        string unityTotalReservedMemorySizeText { get; }
+        string monoUsedSizeText { get; }
+        string monoHeapSizeText { get; }
     }
 }

@@ -26,9 +26,19 @@ namespace jwellone
             long IMemoryProfiler.usedMemorySize => _memoryProfiler.usedMemorySize;
             long IMemoryProfiler.availableMemorySize => _memoryProfiler.availableMemorySize;
             long IMemoryProfiler.totalMemorySize => _memoryProfiler.totalMemorySize;
+            long IMemoryProfiler.unityTotalAllocatedMemorySize => _memoryProfiler.unityTotalAllocatedMemorySize;
+            long IMemoryProfiler.unityTotalUnusedReservedMemorySize => _memoryProfiler.unityTotalUnusedReservedMemorySize;
+            long IMemoryProfiler.unityTotalReservedMemorySize => _memoryProfiler.unityTotalReservedMemorySize;
+            long IMemoryProfiler.monoUsedSize => _memoryProfiler.monoUsedSize;
+            long IMemoryProfiler.monoHeapSize => _memoryProfiler.monoHeapSize;
             string IProfilerProvider.usedMemorySizeText => _formatter.GetString(_memoryProfiler.usedMemorySize);
             string IProfilerProvider.availableMemorySizeText => _formatter.GetString(_memoryProfiler.availableMemorySize);
             string IProfilerProvider.totalMemorySizeText => _formatter.GetString(_memoryProfiler.totalMemorySize);
+            string IProfilerProvider.unityTotalAllocatedMemorySizeText => _formatter.GetString(_memoryProfiler.unityTotalAllocatedMemorySize);
+            string IProfilerProvider.unityTotalUnusedReservedMemorySizeText => _formatter.GetString(_memoryProfiler.unityTotalUnusedReservedMemorySize);
+            string IProfilerProvider.unityTotalReservedMemorySizeText => _formatter.GetString(_memoryProfiler.unityTotalReservedMemorySize);
+            string IProfilerProvider.monoUsedSizeText => _formatter.GetString(_memoryProfiler.monoUsedSize);
+            string IProfilerProvider.monoHeapSizeText => _formatter.GetString(_memoryProfiler.monoHeapSize);
 
             void Awake()
             {
@@ -57,9 +67,20 @@ namespace jwellone
         long IMemoryProfiler.usedMemorySize => _impl.usedMemorySize;
         long IMemoryProfiler.availableMemorySize => _impl.availableMemorySize;
         long IMemoryProfiler.totalMemorySize => _impl.totalMemorySize;
+        long IMemoryProfiler.unityTotalAllocatedMemorySize => _impl.unityTotalAllocatedMemorySize;
+        long IMemoryProfiler.unityTotalUnusedReservedMemorySize => _impl.unityTotalUnusedReservedMemorySize;
+        long IMemoryProfiler.unityTotalReservedMemorySize => _impl.unityTotalReservedMemorySize;
+        long IMemoryProfiler.monoUsedSize => _impl.monoUsedSize;
+        long IMemoryProfiler.monoHeapSize => _impl.monoHeapSize;
+
         string IProfilerProvider.usedMemorySizeText => _impl.usedMemorySizeText;
         string IProfilerProvider.availableMemorySizeText => _impl.availableMemorySizeText;
         string IProfilerProvider.totalMemorySizeText => _impl.totalMemorySizeText;
+        string IProfilerProvider.unityTotalAllocatedMemorySizeText => _impl.unityTotalAllocatedMemorySizeText;
+        string IProfilerProvider.unityTotalUnusedReservedMemorySizeText => _impl.unityTotalUnusedReservedMemorySizeText;
+        string IProfilerProvider.unityTotalReservedMemorySizeText => _impl.unityTotalReservedMemorySizeText;
+        string IProfilerProvider.monoUsedSizeText => _impl.monoUsedSizeText;
+        string IProfilerProvider.monoHeapSizeText => _impl.monoHeapSizeText;
 
         DefaultProfilerProvider()
         {

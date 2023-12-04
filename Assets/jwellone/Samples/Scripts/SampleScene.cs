@@ -16,21 +16,31 @@ namespace jwellone.Samples
 
             var profiler = DeviceUtil.profiler;
             sb.AppendLine("■fps");
-            sb.AppendLine(profiler.fps.ToString("#.##"));
+            sb.Append("\t").AppendLine(profiler.fps.ToString("#.##"));
             sb.AppendLine();
 
             sb.AppendLine("■Memory");
-            sb.Append("Used : ").AppendLine(profiler.usedMemorySizeText);
-            sb.Append("Available : ").AppendLine(profiler.availableMemorySizeText);
-            sb.Append("Total : ").AppendLine(profiler.totalMemorySizeText);
+            sb.AppendLine("- OS");
+            sb.Append("\tUsed\t\t:\t").AppendLine(profiler.usedMemorySizeText);
+            sb.Append("\tAvailable\t:\t").AppendLine(profiler.availableMemorySizeText);
+            sb.Append("\tTotal\t\t\t:\t").AppendLine(profiler.totalMemorySizeText);
+
+            sb.AppendLine("- Unity");
+            sb.Append("\tUsed\t\t:\t").AppendLine(profiler.unityTotalAllocatedMemorySizeText);
+            sb.Append("\tAvailable\t:\t").AppendLine(profiler.unityTotalReservedMemorySizeText);
+            sb.Append("\tTotal\t\t\t:\t").AppendLine(profiler.unityTotalReservedMemorySizeText);
+
+            sb.AppendLine("- Mono");
+            sb.Append("\tUsed\t\t:\t").AppendLine(profiler.monoUsedSizeText);
+            sb.Append("\tTotal\t\t\t:\t").AppendLine(profiler.monoHeapSizeText);
+
             sb.AppendLine();
 
             var storage = DeviceUtil.storage;
-
             sb.AppendLine("■Disk Space");
-            sb.Append("Used : ").AppendLine(storage.usedDiskSpaceText);
-            sb.Append("Available : ").AppendLine(storage.availableDiskSpaceText);
-            sb.Append("Total : ").AppendLine(storage.totalDiskSpaceText);
+            sb.Append("\tUsed\t\t:\t").AppendLine(storage.usedDiskSpaceText);
+            sb.Append("\tAvailable\t:\t").AppendLine(storage.availableDiskSpaceText);
+            sb.Append("\tTotal\t\t\t:\t").AppendLine(storage.totalDiskSpaceText);
             sb.AppendLine();
 
             _text.text = sb.ToString();
