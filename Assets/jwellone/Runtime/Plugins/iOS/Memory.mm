@@ -19,6 +19,19 @@ extern "C"
         return (int64_t)info.phys_footprint;
     }
 
+    int64_t getAvailableMemorySize()
+    {
+        if (@available(iOS 13.0, *)) 
+        {
+            return (int64_t)os_proc_available_memory();
+        }
+        
+#ifndef NDEBUG
+        NSLog(@"'os_proc_available_memory' is only available on iOS 13.0 or newer");
+#endif
+        return 0;
+    }
+
     int64_t getTotalMemorySize()
     {
         return [[NSProcessInfo processInfo] physicalMemory];

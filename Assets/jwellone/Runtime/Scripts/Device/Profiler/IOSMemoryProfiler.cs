@@ -8,12 +8,16 @@ namespace jwellone
     public sealed class IOSMemoryProfiler : IMemoryProfiler
     {
         [DllImport("__Internal")]
-        static extern uint getUsedMemorySize();
+        static extern long getUsedMemorySize();
 
         [DllImport("__Internal")]
-        static extern uint getTotalMemorySize();
+        static extern long getAvailableMemorySize();
+
+        [DllImport("__Internal")]
+        static extern long getTotalMemorySize();
 
         long IMemoryProfiler.useMemorySize => getUsedMemorySize();
+        long IMemoryProfiler.availableMemorySize => getAvailableMemorySize();
         long IMemoryProfiler.totalMemorySize => getTotalMemorySize();
     }
 }

@@ -45,6 +45,15 @@ namespace jwellone
             }
         }
 
+        long IMemoryProfiler.availableMemorySize
+        {
+            get
+            {
+                _activeManager!.Call("getMemoryInfo", _memoryInfo);
+                return _memoryInfo!.Get<long>("availMem");
+            }
+        }
+
         long IMemoryProfiler.totalMemorySize
         {
             get
