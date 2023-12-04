@@ -84,7 +84,7 @@ namespace jwellone
 
         DefaultProfilerProvider()
         {
-            _impl = new GameObject("Profilder").AddComponent<Behaviour>();
+            _impl = new GameObject("Profile").AddComponent<Behaviour>();
         }
 
         internal static IProfilerProvider Create()
