@@ -1,4 +1,5 @@
 #import <mach/mach.h>
+#include <os/proc.h>
 
 extern "C"
 {
