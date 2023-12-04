@@ -6,9 +6,9 @@ namespace jwellone
 {
     public interface IMemoryProfiler
     {
-        long usedMemorySize { get; }
-        long availableMemorySize { get; }
-        long totalMemorySize { get; }
+        long usedMemorySize => 0L;
+        long availableMemorySize => 0L;
+        long totalMemorySize => 0L;
 
         long unityTotalAllocatedMemorySize => Profiler.GetTotalAllocatedMemoryLong();
         long unityTotalUnusedReservedMemorySize => Profiler.GetTotalUnusedReservedMemoryLong();
