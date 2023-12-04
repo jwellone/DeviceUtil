@@ -4,7 +4,8 @@ namespace jwellone
 {
     public interface IStorageProvider : IStorage
     {
-        string freeDiskSpaceText { get; }
+        string usedDiskSpaceText { get; }
+        string availableDiskSpaceText { get; }
         string totalDiskSpaceText { get; }
     }
 }

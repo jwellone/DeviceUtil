@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,15 +13,6 @@ namespace jwellone.Samples
         void Update()
         {
             var sb = new StringBuilder();
-            var storage = DeviceUtil.storage;
-
-            sb.AppendLine("■freeDiskSpace");
-            sb.AppendLine(storage.freeDiskSpaceText);
-            sb.AppendLine();
-
-            sb.AppendLine("■totalDiskSpace");
-            sb.AppendLine(storage.totalDiskSpaceText);
-            sb.AppendLine();
 
             var profiler = DeviceUtil.profiler;
             sb.AppendLine("■fps");
@@ -30,9 +20,17 @@ namespace jwellone.Samples
             sb.AppendLine();
 
             sb.AppendLine("■Memory");
-            sb.Append("Use : ").AppendLine(profiler.useMemorySizeText);
+            sb.Append("Used : ").AppendLine(profiler.usedMemorySizeText);
             sb.Append("Available : ").AppendLine(profiler.availableMemorySizeText);
             sb.Append("Total : ").AppendLine(profiler.totalMemorySizeText);
+            sb.AppendLine();
+
+            var storage = DeviceUtil.storage;
+
+            sb.AppendLine("■Disk Space");
+            sb.Append("Used : ").AppendLine(storage.usedDiskSpaceText);
+            sb.Append("Available : ").AppendLine(storage.availableDiskSpaceText);
+            sb.Append("Total : ").AppendLine(storage.totalDiskSpaceText);
             sb.AppendLine();
 
             _text.text = sb.ToString();

@@ -30,7 +30,7 @@ namespace jwellone
             _memoryInfo?.Dispose();
         }
 
-        long IMemoryProfiler.useMemorySize
+        long IMemoryProfiler.usedMemorySize
         {
             get
             {

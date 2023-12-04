@@ -1,6 +1,6 @@
 extern "C"
 {
-    int64_t getFreeDiskSpace()
+    int64_t getAvailableDiskSpace()
     {
         NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: NSHomeDirectory()];
         NSError *error = nil;
@@ -34,5 +34,10 @@ extern "C"
 #endif
         
         return 0;
+    }
+
+    int64_t getUsedDiskSpace()
+    {
+        return getTotalDiskSpace() - getAvailableDiskSpace();
     }
 }

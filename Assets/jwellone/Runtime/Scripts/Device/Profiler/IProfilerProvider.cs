@@ -5,7 +5,7 @@ namespace jwellone
     public interface IProfilerProvider : IMemoryProfiler
     {
         float fps { get; }
-        string useMemorySizeText { get; }
+        string usedMemorySizeText { get; }
         string availableMemorySizeText { get; }
         string totalMemorySizeText { get; }
     }

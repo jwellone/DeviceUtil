@@ -15,7 +15,8 @@ namespace jwellone
         }
 
         long _blockSize => _statFs.Call<long>("getBlockSizeLong");
-        long IStorage.freeDiskSpace => _statFs.Call<long>("getAvailableBlocksLong") * _blockSize;
+        long IStorage.usedDiskSpace => (_statFs.Call<long>("getBlockCountLong") - _statFs.Call<long>("getAvailableBlocksLong")) * _blockSize;
+        long IStorage.availableDiskSpace => _statFs.Call<long>("getAvailableBlocksLong") * _blockSize;
         long IStorage.totalDiskSpace => _statFs.Call<long>("getBlockCountLong") * _blockSize;
     }
 }

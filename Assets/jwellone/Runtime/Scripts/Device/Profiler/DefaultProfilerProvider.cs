@@ -23,10 +23,10 @@ namespace jwellone
 #endif
 
             float IProfilerProvider.fps => _fps;
-            long IMemoryProfiler.useMemorySize => _memoryProfiler.useMemorySize;
+            long IMemoryProfiler.usedMemorySize => _memoryProfiler.usedMemorySize;
             long IMemoryProfiler.availableMemorySize => _memoryProfiler.availableMemorySize;
             long IMemoryProfiler.totalMemorySize => _memoryProfiler.totalMemorySize;
-            string IProfilerProvider.useMemorySizeText => _formatter.GetString(_memoryProfiler.useMemorySize);
+            string IProfilerProvider.usedMemorySizeText => _formatter.GetString(_memoryProfiler.usedMemorySize);
             string IProfilerProvider.availableMemorySizeText => _formatter.GetString(_memoryProfiler.availableMemorySize);
             string IProfilerProvider.totalMemorySizeText => _formatter.GetString(_memoryProfiler.totalMemorySize);
 
@@ -54,10 +54,10 @@ namespace jwellone
 
         readonly IProfilerProvider _impl;
         float IProfilerProvider.fps => _impl.fps;
-        long IMemoryProfiler.useMemorySize => _impl.useMemorySize;
+        long IMemoryProfiler.usedMemorySize => _impl.usedMemorySize;
         long IMemoryProfiler.availableMemorySize => _impl.availableMemorySize;
         long IMemoryProfiler.totalMemorySize => _impl.totalMemorySize;
-        string IProfilerProvider.useMemorySizeText => _impl.useMemorySizeText;
+        string IProfilerProvider.usedMemorySizeText => _impl.usedMemorySizeText;
         string IProfilerProvider.availableMemorySizeText => _impl.availableMemorySizeText;
         string IProfilerProvider.totalMemorySizeText => _impl.totalMemorySizeText;
 

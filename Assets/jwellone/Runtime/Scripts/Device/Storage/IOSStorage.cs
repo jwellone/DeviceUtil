@@ -9,13 +9,16 @@ namespace jwellone
     internal sealed class IOSStorage : IStorage
     {
         [DllImport("__Internal")]
-        static extern long getFreeDiskSpace();
+        static extern long getUsedDiskSpace();
+
+        [DllImport("__Internal")]
+        static extern long getAvailableDiskSpace();
 
         [DllImport("__Internal")]
         static extern long getTotalDiskSpace();
 
-        long IStorage.freeDiskSpace => getFreeDiskSpace();
-
+        long IStorage.usedDiskSpace => getUsedDiskSpace();
+        long IStorage.availableDiskSpace => getAvailableDiskSpace();
         long IStorage.totalDiskSpace => getTotalDiskSpace();
 
         void IStorage.SetNoBackupFlag(string path)

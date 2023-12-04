@@ -16,9 +16,11 @@ namespace jwellone
 
         readonly IByteCountFormatter _formatter = new ByteCountFormatter();
 
-        long IStorage.freeDiskSpace => _impl.freeDiskSpace;
+        long IStorage.usedDiskSpace => _impl.usedDiskSpace;
+        long IStorage.availableDiskSpace => _impl.availableDiskSpace;
         long IStorage.totalDiskSpace => _impl.totalDiskSpace;
-        string IStorageProvider.freeDiskSpaceText => _formatter.GetString(_impl.freeDiskSpace);
+        string IStorageProvider.usedDiskSpaceText => _formatter.GetString(_impl.usedDiskSpace);
+        string IStorageProvider.availableDiskSpaceText => _formatter.GetString(_impl.availableDiskSpace);
         string IStorageProvider.totalDiskSpaceText => _formatter.GetString(_impl.totalDiskSpace);
         void IStorage.SetNoBackupFlag(string path) => _impl.SetNoBackupFlag(path);
 
