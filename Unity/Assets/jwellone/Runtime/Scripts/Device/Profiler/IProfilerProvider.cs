@@ -13,5 +13,7 @@ namespace jwellone
         string unityTotalReservedMemorySizeText { get; }
         string monoUsedSizeText { get; }
         string monoHeapSizeText { get; }
+        string systemMemorySizeText { get; }
+        string graphicsMemorySizeText { get; }
     }
 }

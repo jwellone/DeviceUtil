@@ -31,6 +31,8 @@ namespace jwellone
             long IMemoryProfiler.unityTotalReservedMemorySize => _memoryProfiler.unityTotalReservedMemorySize;
             long IMemoryProfiler.monoUsedSize => _memoryProfiler.monoUsedSize;
             long IMemoryProfiler.monoHeapSize => _memoryProfiler.monoHeapSize;
+            ulong IMemoryProfiler.systemMemorySize => _memoryProfiler.systemMemorySize;
+            ulong IMemoryProfiler.graphicsMemorySize => _memoryProfiler.graphicsMemorySize;
             string IProfilerProvider.usedMemorySizeText => _formatter.GetString(_memoryProfiler.usedMemorySize);
             string IProfilerProvider.availableMemorySizeText => _formatter.GetString(_memoryProfiler.availableMemorySize);
             string IProfilerProvider.totalMemorySizeText => _formatter.GetString(_memoryProfiler.totalMemorySize);
@@ -39,6 +41,8 @@ namespace jwellone
             string IProfilerProvider.unityTotalReservedMemorySizeText => _formatter.GetString(_memoryProfiler.unityTotalReservedMemorySize);
             string IProfilerProvider.monoUsedSizeText => _formatter.GetString(_memoryProfiler.monoUsedSize);
             string IProfilerProvider.monoHeapSizeText => _formatter.GetString(_memoryProfiler.monoHeapSize);
+            string IProfilerProvider.systemMemorySizeText => _formatter.GetString(_memoryProfiler.systemMemorySize);
+            string IProfilerProvider.graphicsMemorySizeText => _formatter.GetString(_memoryProfiler.graphicsMemorySize);
 
             void Awake()
             {
@@ -72,6 +76,8 @@ namespace jwellone
         long IMemoryProfiler.unityTotalReservedMemorySize => _impl.unityTotalReservedMemorySize;
         long IMemoryProfiler.monoUsedSize => _impl.monoUsedSize;
         long IMemoryProfiler.monoHeapSize => _impl.monoHeapSize;
+        ulong IMemoryProfiler.systemMemorySize => _impl.systemMemorySize;
+        ulong IMemoryProfiler.graphicsMemorySize => _impl.graphicsMemorySize;
 
         string IProfilerProvider.usedMemorySizeText => _impl.usedMemorySizeText;
         string IProfilerProvider.availableMemorySizeText => _impl.availableMemorySizeText;
@@ -81,6 +87,8 @@ namespace jwellone
         string IProfilerProvider.unityTotalReservedMemorySizeText => _impl.unityTotalReservedMemorySizeText;
         string IProfilerProvider.monoUsedSizeText => _impl.monoUsedSizeText;
         string IProfilerProvider.monoHeapSizeText => _impl.monoHeapSizeText;
+        string IProfilerProvider.systemMemorySizeText => _impl.systemMemorySizeText;
+        string IProfilerProvider.graphicsMemorySizeText => _impl.graphicsMemorySizeText;
 
         DefaultProfilerProvider()
         {

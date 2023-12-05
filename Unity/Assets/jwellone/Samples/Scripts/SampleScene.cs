@@ -20,7 +20,11 @@ namespace jwellone.Samples
             sb.AppendLine();
 
             sb.AppendLine("■Memory");
-            sb.AppendLine("- OS");
+            sb.AppendLine("- SystemInfo");
+            sb.Append("\tSystem\t:\t").AppendLine(profiler.systemMemorySizeText);
+            sb.Append("\tGraphics\t:\t").AppendLine(profiler.graphicsMemorySizeText);
+
+            sb.AppendLine("- App");
             sb.Append("\tUsed\t\t:\t").AppendLine(profiler.usedMemorySizeText);
             sb.Append("\tAvailable\t:\t").AppendLine(profiler.availableMemorySizeText);
             sb.Append("\tTotal\t\t\t:\t").AppendLine(profiler.totalMemorySizeText);

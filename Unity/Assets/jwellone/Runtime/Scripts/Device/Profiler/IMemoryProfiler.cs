@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.Profiling;
 
 #nullable enable
@@ -16,5 +17,8 @@ namespace jwellone
 
         long monoUsedSize => Profiler.GetMonoUsedSizeLong();
         long monoHeapSize => Profiler.GetMonoHeapSizeLong();
+
+        ulong systemMemorySize => (ulong)SystemInfo.systemMemorySize * 1024 * 1024;
+        ulong graphicsMemorySize => (ulong)SystemInfo.graphicsMemorySize * 1024 * 1024;
     }
 }

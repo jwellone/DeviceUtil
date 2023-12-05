@@ -25,6 +25,11 @@ namespace jwellone
             return FormatText(size, 0);
         }
 
+        string IByteCountFormatter.GetString(ulong size)
+        {
+            return FormatText(size, 0);
+        }
+
         string FormatText(double size, int index)
         {
             if (size <= 1024)
